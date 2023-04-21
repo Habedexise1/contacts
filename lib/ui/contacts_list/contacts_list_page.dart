@@ -47,10 +47,13 @@ class _ContactsListPageState extends State<ContactsListPage> {
                           !_contacts[index].isFavorite;
                       _contacts.sort(((a, b) {
                         if (a.isFavorite) {
+                          // contact will be before contact two
                           return -1;
                         } else if (b.isFavorite) {
+                          //contact will be after contact two
                           return 1;
                         } else {
+                          //the position doesnt change
                           return 0;
                         }
                       }));

@@ -41,9 +41,21 @@ class _ContactsListPageState extends State<ContactsListPage> {
               subtitle: Text(_contacts[index].email),
               trailing: IconButton(
                 onPressed: () {
-                  setState(() {
-                    _contacts[index].isFavorite = !_contacts[index].isFavorite;
-                  },);
+                  setState(
+                    () {
+                      _contacts[index].isFavorite =
+                          !_contacts[index].isFavorite;
+                      _contacts.sort(((a, b) {
+                        if (a.isFavorite) {
+                          return -1;
+                        } else if (b.isFavorite) {
+                          return 1;
+                        } else {
+                          return 0;
+                        }
+                      }));
+                    },
+                  );
                 },
                 icon: Icon(
                     _contacts[index].isFavorite

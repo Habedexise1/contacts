@@ -43,7 +43,7 @@ class _ContactsListPageState extends State<ContactsListPage> {
                 onPressed: () {
                   setState(() {
                     _contacts[index].isFavorite = !_contacts[index].isFavorite;
-                  });
+                  },);
                 },
                 icon: Icon(
                     _contacts[index].isFavorite
